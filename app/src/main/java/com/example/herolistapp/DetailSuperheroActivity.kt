@@ -2,6 +2,7 @@ package com.example.herolistapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.herolistapp.databinding.ActivityDetailSuperheroBinding
 import com.example.herolistapp.databinding.ActivityMainBinding
 import com.squareup.picasso.Picasso
@@ -41,10 +42,27 @@ class DetailSuperheroActivity : AppCompatActivity() {
         }
 
     }
-
     private fun createUI(superhero: SuperHeroDetailResponse) {
         Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
+        binding.tvsuperheroname.text = superhero.name
+        prepareStats(superhero.powerstats)
 
+    }
+
+    private fun prepareStats(powerstats: PowerStatsResponse){
+        updateHeight(binding.viewCombat, powerstats.combat.toInt())
+        updateHeight(binding.viewDurability, powerstats.durability.toInt())
+        updateHeight(binding.viewSpeed, powerstats.speed.toInt())
+        updateHeight(binding.viewPower, powerstats.power.toInt())
+        updateHeight(binding.viewStrength, powerstats.strength.toInt())
+        updateHeight(binding.viewIntelligence, powerstats.intelligence.toInt())
+
+    }
+
+    private fun updateHeight(view: View, stat:Int){
+        val params = view.layoutParams
+        params.height = stat
+        view.layoutParams = params
     }
 
     private fun getRetrofit(): Retrofit {

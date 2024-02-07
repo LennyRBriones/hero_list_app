@@ -5,4 +5,13 @@
 
     <color name="hero_item_name">#73673AB7</color>
     <color name="background_detail">#6428CD</color>
+
+    <!-- Stats -->
+    <color name="stat_intelligence">#00ff00</color>
+    <color name="stat_strength">#FF0000</color>
+    <color name="stat_speed">#E88B00</color>
+    <color name="stat_durability">#03A9F4</color>
+    <color name="stat_power">#FFEB3B</color>
+    <color name="stat_combat">#6428CD</color>
+
 </resources>

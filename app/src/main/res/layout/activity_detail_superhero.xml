@@ -24,6 +24,140 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvsuperheroname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:gravity="center_horizontal"
+            tools:text="Lenn R Briones"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+        
+        <View
+            android:id="@+id/viewIntelligence"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@color/stat_intelligence"/>
+
+            <View
+                android:id="@+id/viewStrength"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
+                android:background="@color/stat_strength"/>
+
+            <View
+                android:id="@+id/viewSpeed"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
+                android:background="@color/stat_speed"/>
+
+            <View
+                android:id="@+id/viewDurability"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
+                android:background="@color/stat_durability"/>
+
+            <View
+                android:id="@+id/viewPower"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
+                android:background="@color/stat_power"/>
+
+            <View
+                android:id="@+id/viewCombat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
+                android:background="@color/stat_combat"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <TextView
+                android:text="@string/intelligence"
+                android:textSize="11sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:text="@string/strength"
+                android:textSize="11sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:text="@string/speed"
+                android:textSize="11sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:text="@string/durability"
+                android:textSize="11sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:text="@string/power"
+                android:textSize="11sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:text="@string/combat"
+                android:textSize="11sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
