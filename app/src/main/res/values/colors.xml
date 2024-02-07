@@ -4,5 +4,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="hero_item_name">#73673AB7</color>
-
+    <color name="background_detail">#6428CD</color>
 </resources>
