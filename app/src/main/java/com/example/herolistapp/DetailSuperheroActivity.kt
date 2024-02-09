@@ -2,6 +2,7 @@ package com.example.herolistapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import com.example.herolistapp.databinding.ActivityDetailSuperheroBinding
 import com.example.herolistapp.databinding.ActivityMainBinding
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 import okhttp3.Dispatcher
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
 class DetailSuperheroActivity : AppCompatActivity() {
 
@@ -46,23 +48,29 @@ class DetailSuperheroActivity : AppCompatActivity() {
         Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
         binding.tvsuperheroname.text = superhero.name
         prepareStats(superhero.powerstats)
+        binding.tvsuperherorealname.text = superhero.biography.fullName
+        binding.tvPublisher.text = superhero.biography.publisher
 
     }
 
     private fun prepareStats(powerstats: PowerStatsResponse){
-        updateHeight(binding.viewCombat, powerstats.combat.toInt())
-        updateHeight(binding.viewDurability, powerstats.durability.toInt())
-        updateHeight(binding.viewSpeed, powerstats.speed.toInt())
-        updateHeight(binding.viewPower, powerstats.power.toInt())
-        updateHeight(binding.viewStrength, powerstats.strength.toInt())
-        updateHeight(binding.viewIntelligence, powerstats.intelligence.toInt())
+        updateHeight(binding.viewCombat, powerstats.combat)
+        updateHeight(binding.viewDurability, powerstats.durability)
+        updateHeight(binding.viewSpeed, powerstats.speed)
+        updateHeight(binding.viewPower, powerstats.power)
+        updateHeight(binding.viewStrength, powerstats.strength)
+        updateHeight(binding.viewIntelligence, powerstats.intelligence)
 
     }
 
-    private fun updateHeight(view: View, stat:Int){
+    private fun updateHeight(view: View, stat:String){
         val params = view.layoutParams
-        params.height = stat
+        params.height = pxToDp(stat.toFloat())
         view.layoutParams = params
+    }
+
+    private fun pxToDp(px:Float):Int{
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px, resources.displayMetrics).roundToInt()
     }
 
     private fun getRetrofit(): Retrofit {
